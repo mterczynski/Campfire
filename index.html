@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campfire</title>
+	<meta charset="utf-8" />
+    <style>
+        *{
+            margin:0;
+        }
+        body{
+            overflow:hidden;
+            background-color:rgb(0,0,0);
+        }
+        .rightSideMenu{
+            position: absolute;
+            right:0;
+            top:0;
+            padding:3px;
+            padding-top:20px;
+            color:white;
+            width:20%;
+            height:100%;
+            border-left:3px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="rightSideMenu">
+        Amount of particles:<br>
+        <input id="quantity" type="range" min = "0" max="300" value="300"><br>
+        Width of campfire:<br>
+        <input id="width" type="range" value="23"><br>
+        Particle speed:<br>
+        <input id="speed" type="range" value="1.2" min = "0.1" max="4" step="0.01"><br>
+        
+        <input id="material" type="checkbox">&nbsp;material<br>
+        <input id="blend" type="checkbox" checked = "checked">&nbsp;blend<br>
+        <input id="opacity" type="checkbox">&nbsp;opacity<br>  
+        <span id="spanQuantity"></span>
+    </div>
+    <div id="canvasContainer">
+    </div>
+    <!-- Libraries: -->
+    <script src="Stats.js"></script>
+    <script src="three.js"></script>
+    <!-- Own scripts: -->
+    <script src="Fire.js"></script>
+    <script src="main.js"></script>
+      
+</body>
+</html>
