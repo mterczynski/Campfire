@@ -28,7 +28,7 @@ stats.showPanel(0);
 document.body.appendChild(stats.dom );
 //-------------- Campfire: ----------------------------------------
 const fire = new Campfire({fireHeight:25,width:23,particleSpeed:1.2}); // all arguments are optional
-scene.add(fire.getNewObject3d());
+scene.add(fire);
 
 function render()
 {
