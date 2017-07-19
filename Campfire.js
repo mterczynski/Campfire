@@ -1,10 +1,10 @@
 class Campfire extends THREE.Object3D{
-    constructor(parametrsObject = {numberOfParticles:300, particleSpeed:1.2, width:23, fireHeight:25 }){
+    constructor(parameters = {numberOfParticles:300, particleSpeed:1.2, width:23, fireHeight:25 }){
         super();
-        this.userData.width = parametrsObject.width || 23;
-        this.userData.numberOfParticles = parametrsObject.numberOfParticles || 300;
-        this.userData.particleSpeed = parametrsObject.particleSpeed || 1.2;
-        this.userData.fireHeight = parametrsObject.fireHeight || 25;
+        this.userData.width = parameters.width || 23;
+        this.userData.numberOfParticles = parameters.numberOfParticles || 300;
+        this.userData.particleSpeed = parameters.particleSpeed || 1.2;
+        this.userData.fireHeight = parameters.fireHeight || 25;
 
         const particleSize = [3,3,3];
         const fireHeight = this.userData.fireHeight;
