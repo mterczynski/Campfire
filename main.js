@@ -30,13 +30,16 @@ document.body.appendChild(stats.dom );
 const fire = new Campfire({fireHeight:25,width:23,particleSpeed:1.2}); // all arguments are optional
 scene.add(fire);
 
+let lastTick = Date.now();
+
 function render()
 {
     stats.begin();
     stats.end(); 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
-    fire.updateParticles();
+    fire.updateParticles(Date.now() - lastTick);
+    lastTick = Date.now();
 }
 render();
         

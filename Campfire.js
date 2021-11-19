@@ -42,16 +42,17 @@ class Campfire extends THREE.Object3D{
         this.add(light);
         generate();
     }
-    updateParticles()
+    updateParticles(timeDelta)
     {
+        let updatedDelta = timeDelta * 0.12;
         let particles = this.children.filter((el)=>{return el.name == "particle"});
         for(let i=0; i<particles.length; i++)
         {
             let particle = particles[i];
 
-            particle.position.y += Math.random() * 0.5 * this.userData.particleSpeed;
-            particle.material.opacity -= 0.005 * this.userData.particleSpeed;
-            particle.material.opacity -= particle.userData.radius * 0.001 * this.userData.particleSpeed;
+            particle.position.y += Math.random() * 0.5 * this.userData.particleSpeed * updatedDelta;
+            particle.material.opacity -= 0.005 * this.userData.particleSpeed * updatedDelta;
+            particle.material.opacity -= particle.userData.radius * 0.001 * this.userData.particleSpeed * updatedDelta;
             if(particle.position.y >= this.userData.fireHeight)
             {
                 particle.position.y = 0;
